@@ -87,6 +87,8 @@ target_include_directories(heatmap
     "${PROJECT_SOURCE_DIR}"
 )
 
-target_link_libraries(heatmap
-    m
-)
+if (UNIX OR MINGW)
+    target_link_libraries(heatmap
+        m
+    )
+endif()
